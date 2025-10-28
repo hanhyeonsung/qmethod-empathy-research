@@ -1,0 +1,14 @@
+# ---- 외부 라이브러리 ----
+streamlit==1.49.1
+pandas==2.2.2
+plotly==6.3.0
+numpy==2.1.1
+requests==2.32.3
+
+# ---- 표준 라이브러리 (설치 불필요) ----
+# datetime
+# os
+# base64
+# json
+# re
+# time
