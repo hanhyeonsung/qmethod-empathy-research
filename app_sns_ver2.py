@@ -393,7 +393,7 @@ with tabs[0]:
             st.stop()
 
         # 2-4) 일 평균 SNS 방문 빈도 기준(예: 10회 미만 -> 스크린아웃)
-        if sns_freq < 10:
+        if sns_freq < 5:
             st.warning("일 평균 SNS 방문 빈도가 기준(10회) 미만입니다. 스크린아웃 처리합니다.")
             st.markdown(f'<meta http-equiv="refresh" content="0; url=https://datain.co.kr/panel/panel.html?fid={fid}&status=scrout">', unsafe_allow_html=True)
             st.stop()
@@ -704,3 +704,4 @@ data_path = "survey_data.csv"
                 st.error(f"동기화 실패: {resp}")
         else:
             st.error("로컬 CSV가 없거나 비어있습니다. 먼저 설문을 제출해 CSV를 생성하세요.")
+
