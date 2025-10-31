@@ -512,6 +512,17 @@ with tabs[1]:
                 save_csv_safe(df, DATA_PATH)
                 st.success("✅ 응답이 저장되었습니다!")
                 time.sleep(1)
+                        # 🔹 GitHub 자동 업로드
+                if GH_TOKEN and GH_REPO:
+                    ok, resp = push_csv_to_github(
+                        DATA_PATH,
+                        GH_REMOTEP,
+                        note=f"Auto sync {GH_REMOTEP} at {datetime.datetime.now().isoformat()}"
+                    )
+                    if ok:
+                        st.success("✅ GitHub에 자동 동기화되었습니다.")
+                    else:
+                        st.error(f"GitHub 동기화 실패: {resp}")
 
         # 종료 및 리디렉션 버튼
         if st.button("➡️ 응답 전송 및 설문 종료"):
@@ -704,4 +715,5 @@ data_path = "survey_data.csv"
                 st.error(f"동기화 실패: {resp}")
         else:
             st.error("로컬 CSV가 없거나 비어있습니다. 먼저 설문을 제출해 CSV를 생성하세요.")
+
 
