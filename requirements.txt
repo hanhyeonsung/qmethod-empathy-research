@@ -4,7 +4,7 @@ pandas==2.2.2
 plotly==6.3.0
 numpy==2.1.1
 requests==2.32.3
-
+matplotlib==3.10.6  
 # ---- 표준 라이브러리 (설치 불필요) ----
 # datetime
 # os
